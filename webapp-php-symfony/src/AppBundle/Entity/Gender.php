@@ -15,7 +15,17 @@ class Gender
     /**
      * @var string
      */
+    private static $FEMALE_LONG = "female";
+
+    /**
+     * @var string
+     */
     private static $MALE = "m";
+
+    /**
+     * @var string
+     */
+    private static $MALE_LONG = "male";
 
     /**
      * @var string
@@ -65,6 +75,14 @@ class Gender
     public function getAbbreviation()
     {
         return $this->gender;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return ($this->isFemale()) ? self::$FEMALE_LONG : self::$MALE_LONG;
     }
 
     /**
