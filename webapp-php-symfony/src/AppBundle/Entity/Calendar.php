@@ -23,7 +23,7 @@ class Calendar
 
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Person", inversedBy="calendars")
-     * @ORM\JoinColumn(name="person_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="person_id", referencedColumnName="id", nullable=false)
      */
     private $owner;
 

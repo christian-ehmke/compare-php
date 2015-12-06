@@ -27,7 +27,7 @@ class Appointment
 
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Calendar", inversedBy="appointments")
-     * @ORM\JoinColumn(name="calendar_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="calendar_id", referencedColumnName="id", nullable=false)
      */
     private $calendar;
 
