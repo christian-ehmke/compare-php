@@ -59,7 +59,7 @@ class GenerateTestDataCommand extends ContainerAwareCommand
         {
 
             $calendar = new Calendar();
-            $calendar->setOwner($faker->randomElement($people));
+            $calendar->setPerson($faker->randomElement($people));
             $entityManager->persist($calendar);
 
             for ($j = 0; $j < $faker->randomDigit; $j++)

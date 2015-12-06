@@ -25,7 +25,7 @@ class Calendar
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Person", inversedBy="calendars")
      * @ORM\JoinColumn(name="person_id", referencedColumnName="id", nullable=false)
      */
-    private $owner;
+    private $person;
 
     /**
      * Constructor
@@ -81,12 +81,12 @@ class Calendar
     /**
      * Set owner
      *
-     * @param Person $owner
+     * @param Person $person
      * @return Calendar
      */
-    public function setOwner(Person $owner = null)
+    public function setPerson(Person $person = null)
     {
-        $this->owner = $owner;
+        $this->person = $person;
 
         return $this;
     }
@@ -96,8 +96,8 @@ class Calendar
      *
      * @return Person
      */
-    public function getOwner()
+    public function getPerson()
     {
-        return $this->owner;
+        return $this->person;
     }
 }
