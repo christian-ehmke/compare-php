@@ -1,6 +1,5 @@
 package de.ehmke.controller;
 
-import de.ehmke.entity.Calendar;
 import de.ehmke.entity.Person;
 import de.ehmke.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,14 +21,7 @@ public class HomeController
     {
         model.addAttribute("name", name);
 
-        Iterable<Person> persons = personRepository.findAll();
-
-        // Trigger lazy loading
-        for (Person person : persons)
-        {
-            List<Calendar> calendars = person.getCalendars();
-            calendars.forEach(Calendar::getAppointments);
-        }
+        List<Person> persons = personRepository.findAllWithAppointments();
 
         return "home/index";
     }
