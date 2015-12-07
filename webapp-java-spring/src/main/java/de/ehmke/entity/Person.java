@@ -10,6 +10,14 @@ public class Person
 {
 
     /**
+     *
+     */
+    public enum Gender
+    {
+        MALE, FEMALE
+    }
+
+    /**
      * The id
      */
     @Id
@@ -33,6 +41,13 @@ public class Person
      */
     @Column(name = "birthday")
     private Date birthday;
+
+    /**
+     * The gender
+     */
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, name = "gender")
+    private Gender gender;
 
     /**
      * The calendars
@@ -114,6 +129,22 @@ public class Person
     public void setBirthday(Date birthday)
     {
         this.birthday = birthday;
+    }
+
+    /**
+     * @return the gender
+     */
+    public Gender getGender()
+    {
+        return gender;
+    }
+
+    /**
+     * @param gender the gender
+     */
+    public void setGender(Gender gender)
+    {
+        this.gender = gender;
     }
 
     /**
