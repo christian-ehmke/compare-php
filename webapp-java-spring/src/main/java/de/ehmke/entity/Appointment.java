@@ -3,6 +3,8 @@ package de.ehmke.entity;
 import javax.persistence.*;
 import java.util.Date;
 
+import static javax.persistence.TemporalType.TIMESTAMP;
+
 @Entity
 @Table(name = "appointment")
 public class Appointment
@@ -12,12 +14,14 @@ public class Appointment
      * The id
      */
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
     /**
      * The when date
      */
+    @Temporal(TIMESTAMP)
     @Column(nullable = false, name = "when_date")
     private Date whenDate;
 

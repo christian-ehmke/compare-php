@@ -39,7 +39,7 @@ class Person
     private $birthday;
 
     /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Calendar", mappedBy="owner")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Calendar", mappedBy="person")
      */
     private $calendars;
 

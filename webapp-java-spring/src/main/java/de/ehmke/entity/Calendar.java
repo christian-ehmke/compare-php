@@ -12,6 +12,7 @@ public class Calendar
      * The id
      */
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 

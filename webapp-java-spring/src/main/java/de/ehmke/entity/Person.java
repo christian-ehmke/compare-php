@@ -4,6 +4,8 @@ import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
+import static javax.persistence.TemporalType.DATE;
+
 @Entity
 @Table(name = "person")
 public class Person
@@ -21,6 +23,7 @@ public class Person
      * The id
      */
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
@@ -39,6 +42,7 @@ public class Person
     /**
      * The birthday
      */
+    @Temporal(DATE)
     @Column(name = "birthday")
     private Date birthday;
 
