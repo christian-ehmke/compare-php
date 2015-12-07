@@ -10,22 +10,12 @@ class Gender
     /**
      * @var string
      */
-    private static $FEMALE = "f";
+    private static $FEMALE = "FEMALE";
 
     /**
      * @var string
      */
-    private static $FEMALE_LONG = "female";
-
-    /**
-     * @var string
-     */
-    private static $MALE = "m";
-
-    /**
-     * @var string
-     */
-    private static $MALE_LONG = "male";
+    private static $MALE = "MALE";
 
     /**
      * @var string
@@ -82,7 +72,7 @@ class Gender
      */
     public function getName()
     {
-        return ($this->isFemale()) ? self::$FEMALE_LONG : self::$MALE_LONG;
+        return ($this->isFemale()) ? strtolower(self::$FEMALE) : strtolower(self::$MALE);
     }
 
     /**

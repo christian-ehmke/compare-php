@@ -29,7 +29,7 @@ class Person
     private $lastName;
 
     /**
-     * @ORM\Column(type="string", length=1, nullable=false)
+     * @ORM\Column(type="string", length=255, nullable=false)
      */
     private $gender;
 
