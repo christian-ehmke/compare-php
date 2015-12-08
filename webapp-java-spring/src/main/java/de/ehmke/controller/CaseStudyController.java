@@ -8,8 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import java.util.List;
-
 @Controller
 public class CaseStudyController
 {
@@ -19,7 +17,7 @@ public class CaseStudyController
     @RequestMapping(value = "/calendar", method = RequestMethod.GET)
     public String calendar(Model model)
     {
-        List<Person> persons = personRepository.findAllWithAppointments();
+        Iterable<Person> persons = personRepository.findAllWithAppointments();
         model.addAttribute("persons", persons);
         return "casestudy/calendar";
     }
