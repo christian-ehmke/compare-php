@@ -2,11 +2,11 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Website Service</title>
+    <title>Home</title>
+    <style th:include="styles :: styles"></style>
 </head>
 <body>
 <h1>Home</h1>
-<!--@thymesVar id="name" type="String"-->
-<p th:text="'Hello, ' + ${name} + '!'"/>
+<a href="/calendar" th:href="@{/calendar}">calendar</a>
 </body>
 </html>

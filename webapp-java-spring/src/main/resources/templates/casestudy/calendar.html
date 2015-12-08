@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Case Study</title>
+    <style th:include="styles :: styles"></style>
+</head>
+<body>
+<h1>Calendar</h1>
+
+<table>
+    <!--@thymesVar id="persons" type="java.util.List"-->
+    <!--@thymesVar id="person" type="de.ehmke.entity.Person"-->
+    <tr th:each="person : ${persons}">
+        <td th:text="${person.lastName}"></td>
+        <td th:text="${person.firstName}"></td>
+    </tr>
+</table>
+<a href="/" th:href="@{/}">Home</a>
+</body>
+</html>
