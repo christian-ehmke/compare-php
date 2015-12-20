@@ -16,5 +16,5 @@
     # </Directory>
 
     ErrorLog D:\Git\compare-php\webapp-php-symfony\var\logs\error.log
-    CustomLog D:\Git\compare-php\webapp-php-symfony\var\access.log combined
+    CustomLog D:\Git\compare-php\webapp-php-symfony\var\logs\access.log combined
 </VirtualHost>
