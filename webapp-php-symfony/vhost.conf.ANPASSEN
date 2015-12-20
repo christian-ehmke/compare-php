@@ -1,0 +1,20 @@
+<VirtualHost *:80>
+    ServerName domain.tld
+    ServerAlias compare-php-symfony
+
+    DocumentRoot D:\Git\compare-php\webapp-php-symfony\web
+    <Directory D:\Git\compare-php\webapp-php-symfony\web>        
+		AllowOverride All
+        Require all granted
+        Allow from All
+    </Directory>
+
+    # uncomment the following lines if you install assets as symlinks
+    # or run into problems when compiling LESS/Sass/CoffeScript assets
+    # <Directory /var/www/project>
+    #     Options FollowSymlinks
+    # </Directory>
+
+    ErrorLog D:\Git\compare-php\webapp-php-symfony\var\logs\error.log
+    CustomLog D:\Git\compare-php\webapp-php-symfony\var\access.log combined
+</VirtualHost>
