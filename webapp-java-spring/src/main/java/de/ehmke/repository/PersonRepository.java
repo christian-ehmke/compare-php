@@ -5,6 +5,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 /**
  *
  */
@@ -12,7 +14,7 @@ import org.springframework.stereotype.Component;
 public interface PersonRepository extends CrudRepository<Person, Long>
 {
 
-    @Query("SELECT DISTINCT p FROM Person p LEFT OUTER JOIN p.calendars c LEFT OUTER JOIN c.appointments a")
-    Iterable<Person> findAllWithAppointments();
+    @Query("SELECT DISTINCT p FROM Person p LEFT OUTER JOIN FETCH p.calendars c LEFT OUTER JOIN FETCH c.appointments")
+    List<Person> findAllWithAppointments();
 
 }

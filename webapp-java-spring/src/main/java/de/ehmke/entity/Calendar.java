@@ -1,7 +1,7 @@
 package de.ehmke.entity;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "calendar")
@@ -27,7 +27,7 @@ public class Calendar
      * The appointments
      */
     @OneToMany(mappedBy = "calendar", cascade = CascadeType.REMOVE)
-    private List<Appointment> appointments;
+    private Set<Appointment> appointments;
 
     /**
      * @return the id
@@ -64,7 +64,7 @@ public class Calendar
     /**
      * @return the appointments
      */
-    public List<Appointment> getAppointments()
+    public Set<Appointment> getAppointments()
     {
         return appointments;
     }
@@ -72,7 +72,7 @@ public class Calendar
     /**
      * @param appointments the appointments
      */
-    public void setAppointments(List<Appointment> appointments)
+    public void setAppointments(Set<Appointment> appointments)
     {
         this.appointments = appointments;
     }

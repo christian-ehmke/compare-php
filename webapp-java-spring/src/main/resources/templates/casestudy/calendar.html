@@ -15,13 +15,13 @@
             <!--@thymesVar id="person" type="de.ehmke.entity.Person"-->
             <p th:each="person : ${persons}">
                 <h3>
-                    <span th:text="${person.lastName}" th:remove="tag"></span> <span th:text="${person.firstName}" th:remove="tag"></span> has <span th:remove="tag" th:text="${person.calendars.size()}"></span> calendars
+                    <span th:text="${person.lastName}" th:remove="tag"></span> <span th:text="${person.firstName}" th:remove="tag"></span> has <span th:remove="tag" th:text="${person.getCalendars().size()}"></span> calendars
                 </h3>
                 <!--@thymesVar id="calendar" type="de.ehmke.entity.Calendar"-->
-                <div th:each="calendar, calendarStat : ${person.calendars}" class="calendar">
-                    <h4>Calendar <span th:text="${calendarStat.count}" th:remove="tag"></span> has <span th:text="${calendar.appointments.size()}"></span> appointments:</h4>
+                <div th:each="calendar, calendarStat : ${person.getCalendars()}" class="calendar">
+                    <h4>Calendar <span th:text="${calendarStat.count}" th:remove="tag"></span> has <span th:text="${calendar.getAppointments().size()}"></span> appointments:</h4>
                     <!--@thymesVar id="appointment" type="de.ehmke.entity.Appointment"-->
-                    <div th:each="appointment : ${calendar.appointments}" class="calendar-appointment">
+                    <div th:each="appointment : ${calendar.getAppointments()}" class="calendar-appointment">
                         <b>
                             On <span th:text="${#calendars.format(appointment.getWhenDate(),'yyyy-mm-dd')}" th:remove="tag"></span> at <span th:text="${#calendars.format(appointment.getWhenDate(),'hh:mm')}" th:remove="tag"></span>:
                         </b>

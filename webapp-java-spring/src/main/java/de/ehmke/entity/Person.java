@@ -2,7 +2,7 @@ package de.ehmke.entity;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
+import java.util.Set;
 
 import static javax.persistence.TemporalType.DATE;
 
@@ -57,7 +57,7 @@ public class Person
      * The calendars
      */
     @OneToMany(mappedBy = "person", cascade = CascadeType.REMOVE)
-    private List<Calendar> calendars;
+    private Set<Calendar> calendars;
 
     /**
      * @return the id
@@ -154,7 +154,7 @@ public class Person
     /**
      * @return the calendars
      */
-    public List<Calendar> getCalendars()
+    public Set<Calendar> getCalendars()
     {
         return calendars;
     }
@@ -162,7 +162,7 @@ public class Person
     /**
      * @param calendars the calendars
      */
-    public void setCalendars(List<Calendar> calendars)
+    public void setCalendars(Set<Calendar> calendars)
     {
         this.calendars = calendars;
     }

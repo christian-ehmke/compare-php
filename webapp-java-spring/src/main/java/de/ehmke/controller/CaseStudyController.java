@@ -19,6 +19,7 @@ public class CaseStudyController
     {
         Iterable<Person> persons = personRepository.findAllWithAppointments();
         model.addAttribute("persons", persons);
+
         return "casestudy/calendar";
     }
 
